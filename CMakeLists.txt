@@ -65,6 +65,10 @@ if ((NOT LLVM_FOUND) OR (NOT CLANG_FOUND) OR (${DOWNLOAD_CLANG}))
 	find_package(LibClang REQUIRED)
 endif()
 
+if(NOT CLANG_VERSION)
+  set(CLANG_VERSION ${LLVM_VERSION_STRING})
+endif()
+
 include_directories(
   include
   ${LLVM_INCLUDE_DIRS}
