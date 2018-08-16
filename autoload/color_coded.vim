@@ -194,7 +194,7 @@ endfunction!
 function! color_coded#get_buffer_name()
 lua << EOF
   local name = color_coded_buffer_name()
-  vim.command("let s:file = '" .. name .. "'")
+  vim.command("let s:file = \"" .. name .. "\"")
 EOF
   if exists("w:color_coded_unique_counter")
     return s:file . w:color_coded_unique_counter
